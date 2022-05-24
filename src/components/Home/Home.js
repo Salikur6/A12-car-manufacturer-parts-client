@@ -2,6 +2,7 @@ import React from 'react';
 import CarouselBanner from './CarouselBanner';
 import CarParts from './CarParts';
 import PartsItems from './PartsItems';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <CarouselBanner></CarouselBanner>
             <CarParts></CarParts>
             <PartsItems></PartsItems>
+            <Reviews></Reviews>
         </div>
     );
 };

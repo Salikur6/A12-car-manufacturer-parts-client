@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='bg-black'>
 
             <div className='container mx-auto'>
-                <footer class="footer p-10 bg-neutral text-neutral-content">
+                <footer class="footer p-10 bg-neutral text-neutral-content md:justify-items-center">
                     <div>
                         <span class="footer-title">Services</span>
                         <a class="link link-hover">Branding</a>

@@ -9,24 +9,6 @@
       "availableQuantity":560 
     },
     {
-     "name":"Car Seats",
-     "description":"Car seats and boosters provide protection for infants and children in a crash.",
-      "price":100,
-      "img":"https://i.ibb.co/0Ct8pWn/carseats.jpg",
-      "supplier":"Chris E. Herring",
-      "minimumQuantity": 100,
-      "availableQuantity":530 
-    },
-    {
-     "name":"Car Engine",
-     "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
-      "price":250,
-      "img":"https://i.ibb.co/2cwfh5D/carengine.jpg",
-      "supplier":"Chris E. Herring",
-      "minimumQuantity": 100,
-      "availableQuantity":650 
-    },
-    {
      "name":"Car Headlight",
      "description":"Headlamps are also often called headlights, but in the most precise usage.",
       "price":70,
@@ -61,5 +43,23 @@
       "supplier":"Chris E. Herring",
       "minimumQuantity": 100,
       "availableQuantity":700 
-    }
+    },
+    {
+        "name":"Car Engine",
+        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+         "price":250,
+         "img":"https://i.ibb.co/2cwfh5D/carengine.jpg",
+         "supplier":"Chris E. Herring",
+         "minimumQuantity": 100,
+         "availableQuantity":650 
+       },
+    {
+        "name":"Car Seats",
+        "description":"Car seats and boosters provide protection for infants and children in a crash.",
+         "price":100,
+         "img":"https://i.ibb.co/0Ct8pWn/carseats.jpg",
+         "supplier":"Chris E. Herring",
+         "minimumQuantity": 100,
+         "availableQuantity":530 
+       }
   ]
