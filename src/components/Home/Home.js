@@ -1,9 +1,14 @@
 import React from 'react';
+import CarouselBanner from './CarouselBanner';
+import CarParts from './CarParts';
+import PartsItems from './PartsItems';
 
 const Home = () => {
     return (
         <div>
-            <h2 className='text-3xl text-primary'>This is Home page</h2>
+            <CarouselBanner></CarouselBanner>
+            <CarParts></CarParts>
+            <PartsItems></PartsItems>
         </div>
     );
 };

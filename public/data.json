@@ -1,0 +1,65 @@
+[
+    {
+     "name":"Car Hood",
+     "description":"The hood (American English) or bonnet (Commonwealth English) is the hinged cover over the engine of motor vehicles.",
+      "price":110,
+      "img":"https://i.ibb.co/LndFQ12/carhood.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":560 
+    },
+    {
+     "name":"Car Seats",
+     "description":"Car seats and boosters provide protection for infants and children in a crash.",
+      "price":100,
+      "img":"https://i.ibb.co/0Ct8pWn/carseats.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":530 
+    },
+    {
+     "name":"Car Engine",
+     "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+      "price":250,
+      "img":"https://i.ibb.co/2cwfh5D/carengine.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":650 
+    },
+    {
+     "name":"Car Headlight",
+     "description":"Headlamps are also often called headlights, but in the most precise usage.",
+      "price":70,
+      "img":"https://i.ibb.co/0QSyT2L/headlight.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":600 
+    },
+    {
+     "name":"Car Side Mirror",
+     "description":"See areas behind and to the sides of the vehicle, outside the driver's peripheral vision .",
+      "price":50,
+      "img":"https://i.ibb.co/p37tL9f/sidemirror.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":550 
+    },
+    {
+     "name":"Steering Wheel",
+     "description":"This converts the rotational motion of the steering wheel into the linear motion that turns the wheels and guides your path.",
+      "price":80,
+      "img":"https://i.ibb.co/vwMwGV5/steering-wheel.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":530 
+    },
+    {
+     "name":"Car Tire",
+     "description":"Most cars come from the factory wearing all-season tires. When all-season tires wear out",
+      "price":90,
+      "img":"https://i.ibb.co/yQBxVNJ/tire.jpg",
+      "supplier":"Chris E. Herring",
+      "minimumQuantity": 100,
+      "availableQuantity":700 
+    }
+  ]
