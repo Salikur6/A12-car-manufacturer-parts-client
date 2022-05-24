@@ -14,7 +14,7 @@ const PartsItems = () => {
         <div className='container mx-auto my-20'>
 
             <div className='my-16'>
-                <h2 className='text-4xl font-bold text-center uppercase'>All of our products</h2>
+                <h2 className='uppercase text-4xl text-center text-primary font-bold'>All of our products</h2>
                 <p></p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
