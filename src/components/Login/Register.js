@@ -49,11 +49,12 @@ const Register = () => {
                                         </div>
                                         <div class="form-control mb-4">
                                             <span class="label-text font-bold">Email</span>
-                                            <input type="email" placeholder="Email" class="input input-bordered  font-bold" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
+                                            <input type="email" placeholder="Email" class="input input-bordered font-bold" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
                                         </div>
                                         <div class="form-control mb-4">
                                             <span class="label-text font-bold">Password</span>
-                                            <input type="password" placeholder="Password" class="input input-bordered  font-bold" {...register("Password", { max: 30, min: 6 })} />
+
+                                            <input type="password" placeholder="password" class="input input-bordered font-bold" {...register("password", { pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i })} />
                                         </div>
 
 
