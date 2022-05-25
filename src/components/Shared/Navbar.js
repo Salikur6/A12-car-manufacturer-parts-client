@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../img/logo.png'
 import './Navbar.css'
+import { themeChange } from 'theme-change'
 
 const Navbar = () => {
+
+
+    useEffect(() => {
+        themeChange(false)
+    }, [])
     return (
         <div>
             <div className="navbar bg-base-100 container mx-auto z-50 relative">
@@ -27,8 +33,13 @@ const Navbar = () => {
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                 </Link>
                                 <ul class="p-2 bg-base-100">
-                                    <li><Link to=''>Dark</Link></li>
-                                    <li><Link to=''>Light</Link></li>
+                                    <li>
+                                        <button data-set-theme="light" data-act-class="ACTIVECLASS">Light</button>
+                                    </li>
+
+                                    <li>
+                                        <button data-set-theme="dark" data-act-class="ACTIVECLASS">Dark</button>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -50,8 +61,13 @@ const Navbar = () => {
                                 <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
                             <ul class="p-2 bg-base-100">
-                                <li><Link to=''>Dark</Link></li>
-                                <li><Link to=''>Light</Link></li>
+                                <li>
+                                    <button data-set-theme="light" data-act-class="ACTIVECLASS">Light</button>
+                                </li>
+
+                                <li>
+                                    <button data-set-theme="dark" data-act-class="ACTIVECLASS">Dark</button>
+                                </li>
                             </ul>
                         </li>
                     </ul>

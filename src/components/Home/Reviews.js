@@ -20,7 +20,7 @@ const Reviews = () => {
     return (
         <div style={{ backgroundColor: '#1089E7' }}>
             <div className='container mx-auto my-20 pb-10'>
-                <h2 className='text-center py-10 pt-14 text-3xl font-semibold'>What others Say</h2>
+                <h2 className='text-center py-10 pt-14 text-3xl font-semibold text-primary'>What others Say</h2>
 
                 <h3 className='text-2xl font-bold text-white text-center'>Client Reviews</h3>
                 <Swiper
@@ -52,9 +52,9 @@ const Reviews = () => {
                                     <div class=" px-2 table">
 
                                         <div style={{ display: 'table-cell', verticalAlign: 'middle' }}>
-                                            <p className='text-justify'>{review?.description}</p>
+                                            <p className='text-justify text-white'>{review?.description}</p>
                                             <div class="card-actions">
-                                                <p className='my-8 font-bold'>{review?.name}</p>
+                                                <p className='my-8 font-bold text-secondary'>{review?.name}</p>
                                             </div>
                                         </div>
                                     </div>
