@@ -20,7 +20,7 @@ const Reviews = () => {
     return (
         <div style={{ backgroundColor: '#1089E7' }}>
             <div className='container mx-auto my-20 pb-10'>
-                <h2 className='text-center py-10 pt-14 text-3xl font-semibold text-primary'>What others Say</h2>
+                <h2 className='text-center py-10 pt-14 text-3xl font-semibold text-secondary'>What others Say</h2>
 
                 <h3 className='text-2xl font-bold text-white text-center'>Client Reviews</h3>
                 <Swiper

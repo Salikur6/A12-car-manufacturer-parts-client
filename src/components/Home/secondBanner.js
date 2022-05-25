@@ -4,8 +4,8 @@ import bgTair from '../../img/bgtair.png'
 const secondBanner = () => {
     return (
         <div>
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row container mx-auto">
+            <div class="hero bg-base-200">
+                <div class="hero-content flex-col lg:flex-row container mx-auto py-40">
                     <div className='shrink-0 glass'>
                         <img src={bgTair} class="max-w-sm sm:w-96 w-72 rounded-lg shadow-2xl" alt='' />
                     </div>
