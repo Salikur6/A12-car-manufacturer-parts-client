@@ -23,9 +23,9 @@ const Navbar = () => {
                             <li><Link to='/'>About</Link></li>
                             <li><Link to='/'>Blog</Link></li>
                             <li><Link to='/'>Dashboard</Link></li>
-                            <li><Link to='/'>Login</Link></li>
+                            <li><Link to='/login'>Login</Link></li>
 
-                            <li><Link to='/'>Register</Link></li>
+                            <li><Link to='/register'>Register</Link></li>
 
                             <li tabindex="0">
                                 <Link to=''>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
 
-                    <ul className="menu menu-horizontal p-0 font-semibold "> <li><Link to='/'>Login</Link></li>
+                    <ul className="menu menu-horizontal p-0 font-semibold "> <li><Link to='/login'>Login</Link></li>
 
 
                         <div class="flex flex-col w-full lg:flex-row items-center">
@@ -84,7 +84,7 @@ const Navbar = () => {
                         </div>
 
 
-                        <li><Link to='/'>Register</Link></li>
+                        <li><Link to='/register'>Register</Link></li>
                     </ul>
                 </div>
             </div>

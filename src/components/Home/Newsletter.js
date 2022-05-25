@@ -12,7 +12,7 @@ const Newsletter = () => {
                             <span class="label-text font-bold text-white">Enter your email address</span>
                         </label>
                         <div class="relative my-8">
-                            <input type="email" placeholder="Your E-mail Address *" class="input input-bordered w-full pr-16" />
+                            <input type="email" placeholder="Your E-mail Address *" class="input input-bordered w-full pr-16 text-lime-700 font-bold" />
                             <button class="btn btn-secondary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                         </div>
                     </div>
