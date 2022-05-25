@@ -3,13 +3,24 @@ import { Link } from 'react-router-dom';
 import logo from '../../img/logo.png'
 import './Navbar.css'
 import { themeChange } from 'theme-change'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Spinner from '../Hooks/Spinner';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+
+    const [user, loading] = useAuthState(auth);
 
 
     useEffect(() => {
         themeChange(false)
+
     }, [])
+
+    if (loading) {
+        return <Spinner></Spinner>
+    }
     return (
         <div>
             <div className="navbar bg-base-100 container mx-auto z-50 relative">
@@ -74,18 +85,36 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
 
-                    <ul className="menu menu-horizontal p-0 font-semibold "> <li><Link to='/login'>Login</Link></li>
+                    {user ?
+                        <div>
+                            <p></p>
+                            <ul className="menu menu-horizontal p-0 font-semibold ">
+
+                                <p className='font-bold mr-3 mt-3'>{user?.displayName}</p>
 
 
-                        <div class="flex flex-col w-full lg:flex-row items-center">
-                            <div class="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
-                            {/* <div class="divider divider-horizontal"></div> */}
+                                <div class="flex flex-col w-full lg:flex-row items-center">
+                                    <div class="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
+                                    {/* <div class="divider divider-horizontal"></div> */}
+                                </div>
+                                <li><Link to='' onClick={() => signOut(auth)}>SignOut</Link></li>
 
+
+
+                            </ul>
                         </div>
 
+                        :
 
-                        <li><Link to='/register'>Register</Link></li>
-                    </ul>
+                        <ul className="menu menu-horizontal p-0 font-semibold "> <li><Link to='/login'>Login</Link></li>
+                            <div class="flex flex-col w-full lg:flex-row items-center">
+                                <div class="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
+                                {/* <div class="divider divider-horizontal"></div> */}
+                            </div>
+                            <li><Link to='/register'>Register</Link></li>
+                        </ul>
+                    }
+
                 </div>
             </div>
         </div>

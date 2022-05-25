@@ -127,7 +127,7 @@ const Login = () => {
                                         <label class="label">
                                             <span class="label-text font-bold">Email</span>
                                         </label>
-                                        <input type="text" onChange={handleEmailChange} placeholder="Email" class="input input-bordered  font-bold" />
+                                        <input type="email" onChange={handleEmailChange} placeholder="Email" class="input input-bordered  font-bold" />
                                         <p className='mt-1 text-red-600 font-bold'>{error && error?.email}</p>
 
                                     </div>
@@ -135,7 +135,7 @@ const Login = () => {
                                         <label class="label">
                                             <span class="label-text font-bold">Password</span>
                                         </label>
-                                        <input type="text" placeholder="Password" class="input input-bordered  font-bold" onChange={handlePasswordChange} />
+                                        <input type="password" placeholder="Password" class="input input-bordered  font-bold" onChange={handlePasswordChange} />
 
 
                                         <label class="label">
