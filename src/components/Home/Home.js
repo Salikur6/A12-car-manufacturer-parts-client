@@ -4,6 +4,7 @@ import CarouselBanner from './CarouselBanner';
 import CarParts from './CarParts';
 import PartsItems from './PartsItems';
 import Reviews from './Reviews';
+import SecondBanner from './secondBanner'
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <CarouselBanner></CarouselBanner>
             <CarParts></CarParts>
             <PartsItems></PartsItems>
+            <SecondBanner></SecondBanner>
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
         </div>
