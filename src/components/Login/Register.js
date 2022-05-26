@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinner from '../Hooks/Spinner';
-import { async } from '@firebase/util';
 
 const Register = () => {
     const [checked, setChecked] = useState(false);
@@ -65,54 +64,54 @@ const Register = () => {
                         </div>
                     </div>
                     <div className='table py-40' style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }}>
-                        <div class="hero" style={{ display: 'table-cell', verticalAlign: 'middle' }}>
-                            <div class="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100 mx-auto">
+                        <div className="hero" style={{ display: 'table-cell', verticalAlign: 'middle' }}>
+                            <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100 mx-auto">
 
-                                <div class="card-body">
+                                <div className="card-body">
                                     <div className='my-5'>
                                         <h3 className='text-3xl font-bold text-center mb-3'>Acura</h3>
                                         <h4 className='text-2xl text-center'>Create An Account</h4>
                                     </div>
 
                                     <form onSubmit={handleSubmit(onSubmit)}>
-                                        <div class="form-control mb-4">
-                                            <span class="label-text font-bold">Full Name</span>
-                                            <input type="text" placeholder="Full Name" class="input input-bordered font-bold" {...register("fullName", { required: true, maxLength: 80 })} />
+                                        <div className="form-control mb-4">
+                                            <span className="label-text font-bold">Full Name</span>
+                                            <input type="text" placeholder="Full Name" className="input input-bordered font-bold" {...register("fullName", { required: true, maxLength: 80 })} />
 
                                             <p className='text-red-600 font-bold'>{errors.fullName && "Full Name is required"}</p>
                                         </div>
-                                        <div class="form-control mb-4">
-                                            <span class="label-text font-bold">Email</span>
-                                            <input type="email" placeholder="Email" autoComplete='off' class="input input-bordered font-bold" {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                                        <div className="form-control mb-4">
+                                            <span className="label-text font-bold">Email</span>
+                                            <input type="email" placeholder="Email" autoComplete='off' className="input input-bordered font-bold" {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
 
                                             {errors.email && errors.email.type === "pattern" && <span className='text-red-600 font-bold'>Enter a Valid Eamil</span>}
                                         </div>
-                                        <div class="form-control mb-4">
-                                            <span class="label-text font-bold">Password</span>
+                                        <div className="form-control mb-4">
+                                            <span className="label-text font-bold">Password</span>
 
-                                            <input type="password" placeholder="password" class="input input-bordered font-bold" {...register("password", { required: true, pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i })} />
+                                            <input type="password" placeholder="password" className="input input-bordered font-bold" {...register("password", { required: true, pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i })} />
 
                                             {errors.password && errors.password.type === "pattern" && <span className='text-red-600 font-bold'>Minimum six characters with at least one letter and one number</span>}
 
                                         </div>
 
 
-                                        <div class="form-control">
-                                            <label class="label cursor-pointer justify-start">
+                                        <div className="form-control">
+                                            <label className="label cursor-pointer justify-start">
 
 
                                                 <input type="checkbox" placeholder="check" {...register("checked", {})} onClick={handleChecked} />
 
-                                                <span class="label-text pl-2">I agree to the terms of service</span>
+                                                <span className="label-text pl-2">I agree to the terms of service</span>
                                             </label>
                                         </div>
 
                                         <p className='text-red-600 font-bold'>{createError && createError?.message}</p>
                                         <p className='text-red-600 font-bold'>{updateError && updateError?.message}</p>
-                                        <div class="form-control mt-6">
+                                        <div className="form-control mt-6">
 
                                             {
-                                                checked ? <input type="submit" value='Register' class="btn text-white font-bold" style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} /> : <input type="submit" value='Register' class="btn text-white font-bold" disabled='disabled' style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} />
+                                                checked ? <input type="submit" value='Register' className="btn text-white font-bold" style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} /> : <input type="submit" value='Register' className="btn text-white font-bold" disabled='disabled' style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} />
                                             }
                                         </div>
 
@@ -122,7 +121,7 @@ const Register = () => {
                                         <button className='btn btn-outline hover:btn-error' onClick={handleGoogleSign}><img className='w-12 p-2' src={google} alt="" /></button>
                                     </div>
 
-                                    <div class="divider">OR</div>
+                                    <div className="divider">OR</div>
 
                                     <div className='text-center'>
                                         <p>Already have an Account? <Link className='link link-accent' to='/login'>Login here</Link></p>

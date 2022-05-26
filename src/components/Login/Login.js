@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import loginBg from '../../img/loginbg.jpg';
 import google from '../../img/social-icon/google.png'
@@ -9,7 +9,13 @@ import { toast } from 'react-toastify';
 
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     // linear-gradient(to bottom, #0066ff, #37d1ff)
+
+    let from = location.state?.from?.pathname || "/";
+
+
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const [
@@ -23,7 +29,9 @@ const Login = () => {
         auth
     );
 
-    console.log(googleUser || signInUser);
+    if (googleUser || signInUser) {
+        navigate(from, { replace: true });
+    };
 
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -113,33 +121,33 @@ const Login = () => {
                 </div>
 
                 <div className='table py-40' style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }}>
-                    <div class="hero" style={{ display: 'table-cell', verticalAlign: 'middle' }}>
-                        <div class="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100 mx-auto">
+                    <div className="hero" style={{ display: 'table-cell', verticalAlign: 'middle' }}>
+                        <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100 mx-auto">
 
-                            <div class="card-body">
+                            <div className="card-body">
                                 <div className='my-5'>
                                     <h3 className='text-3xl font-bold text-center mb-3'>Acura</h3>
                                     <h4 className='text-2xl text-center'>Sign Into Your Account</h4>
                                 </div>
 
                                 <form onSubmit={handleSubmit}>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text font-bold">Email</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text font-bold">Email</span>
                                         </label>
-                                        <input type="email" onChange={handleEmailChange} placeholder="Email" class="input input-bordered  font-bold" />
+                                        <input type="email" onChange={handleEmailChange} placeholder="Email" className="input input-bordered  font-bold" />
                                         <p className='mt-1 text-red-600 font-bold'>{error && error?.email}</p>
 
                                     </div>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text font-bold">Password</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text font-bold">Password</span>
                                         </label>
-                                        <input type="password" placeholder="Password" class="input input-bordered  font-bold" onChange={handlePasswordChange} />
+                                        <input type="password" placeholder="Password" className="input input-bordered  font-bold" onChange={handlePasswordChange} />
 
 
-                                        <label class="label">
-                                            <Link to='' class="label-text-alt link link-hover font-bold" onClick={handleResetPassword}>Forgot password?</Link>
+                                        <label className="label">
+                                            <Link to='' className="label-text-alt link link-hover font-bold" onClick={handleResetPassword}>Forgot password?</Link>
                                         </label>
                                         <p className='mt-1 text-red-600 font-bold'>{resetError && resetError?.message}</p>
 
@@ -148,8 +156,8 @@ const Login = () => {
 
                                     </div>
                                     {signInError && <p className='text-red-600 font-bold'>{signInError?.message}</p>}
-                                    <div class="form-control mt-6">
-                                        <input type='submit' value='Login' class="btn text-white font-bold" style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} />
+                                    <div className="form-control mt-6">
+                                        <input type='submit' value='Login' className="btn text-white font-bold" style={{ backgroundImage: "linear-gradient(to bottom, #0066ff, #37d1ff)" }} />
                                     </div>
                                 </form>
 
@@ -161,7 +169,7 @@ const Login = () => {
                                     <button className='btn btn-outline hover:btn-error' onClick={handleGoogleSign}><img className='w-12 p-2' src={google} alt="" /></button>
                                 </div>
 
-                                <div class="divider">OR</div>
+                                <div className="divider">OR</div>
 
                                 <div className='text-center'>
                                     <p>Dont't have an account? <Link className='link link-accent' to='/register'>Register here</Link></p>

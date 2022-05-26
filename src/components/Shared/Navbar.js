@@ -9,12 +9,10 @@ import Spinner from '../Hooks/Spinner';
 import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
-
     const [user, loading] = useAuthState(auth);
 
-
     useEffect(() => {
-        themeChange(false)
+        themeChange(false);
 
     }, [])
 
@@ -31,19 +29,19 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-semibold">
                             <li><Link to='/'>Home</Link></li>
-                            <li><Link to='/'>About</Link></li>
-                            <li><Link to='/'>Blog</Link></li>
-                            <li><Link to='/'>Dashboard</Link></li>
+                            <li><Link to='/about'>About</Link></li>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            <li><Link to='/dashboard'>Dashboard</Link></li>
                             <li><Link to='/login'>Login</Link></li>
 
                             <li><Link to='/register'>Register</Link></li>
 
-                            <li tabindex="0">
+                            <li tabIndex="0">
                                 <Link to=''>
                                     Theme
-                                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                 </Link>
-                                <ul class="p-2 bg-base-100">
+                                <ul className="p-2 bg-base-100">
                                     <li>
                                         <button data-set-theme="light" data-act-class="ACTIVECLASS">Light</button>
                                     </li>
@@ -62,16 +60,16 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 font-semibold ">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/'>About</Link></li>
-                        <li><Link to='/'>Blog</Link></li>
-                        <li><Link to='/'>Dashboard</Link></li>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/dashboard'>Dashboard</Link></li>
 
-                        <li tabindex="0">
+                        <li tabIndex="0">
                             <Link to=''>
                                 Theme
-                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
-                            <ul class="p-2 bg-base-100">
+                            <ul className="p-2 bg-base-100">
                                 <li>
                                     <button data-set-theme="light" data-act-class="ACTIVECLASS">Light</button>
                                 </li>
@@ -86,16 +84,16 @@ const Navbar = () => {
                 <div className="navbar-end">
 
                     {user ?
-                        <div>
-                            <p></p>
+                        <div className='flex'>
+                            <p className='font-bold mr-3 mt-3 text-sm text-orange-600'>{user?.displayName}'s Account</p>
                             <ul className="menu menu-horizontal p-0 font-semibold ">
 
-                                <p className='font-bold mr-3 mt-3'>{user?.displayName}</p>
 
 
-                                <div class="flex flex-col w-full lg:flex-row items-center">
-                                    <div class="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
-                                    {/* <div class="divider divider-horizontal"></div> */}
+
+                                <div className="flex flex-col w-full lg:flex-row items-center">
+                                    <div className="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
+                                    {/* <div className="divider divider-horizontal"></div> */}
                                 </div>
                                 <li><Link to='' onClick={() => signOut(auth)}>SignOut</Link></li>
 
@@ -107,9 +105,9 @@ const Navbar = () => {
                         :
 
                         <ul className="menu menu-horizontal p-0 font-semibold "> <li><Link to='/login'>Login</Link></li>
-                            <div class="flex flex-col w-full lg:flex-row items-center">
-                                <div class="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
-                                {/* <div class="divider divider-horizontal"></div> */}
+                            <div className="flex flex-col w-full lg:flex-row items-center">
+                                <div className="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
+                                {/* <div className="divider divider-horizontal"></div> */}
                             </div>
                             <li><Link to='/register'>Register</Link></li>
                         </ul>

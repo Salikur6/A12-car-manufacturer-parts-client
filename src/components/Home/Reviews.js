@@ -40,20 +40,22 @@ const Reviews = () => {
                     modules={[Keyboard, Pagination, Navigation]}
                     className="mySwiper"
                 >
+
+
                     {
-                        reviews.map(review => <SwiperSlide>
+                        reviews.map(review => <SwiperSlide key={review?._id}>
                             <div className='lg:w-1/2 mx-auto my-10'>
-                                <div class="card glass card-side shadow-xl">
+                                <div className="card glass card-side shadow-xl">
                                     <div className='shrink-0'>
                                         <figure><img className='p-5 w-[150px] sm:w-full rounded-full' src={review?.img || client} alt="Client img" /></figure>
                                     </div>
                                     <div>
                                     </div>
-                                    <div class=" px-2 table">
+                                    <div className=" px-2 table">
 
                                         <div style={{ display: 'table-cell', verticalAlign: 'middle' }}>
                                             <p className='text-justify text-white'>{review?.description}</p>
-                                            <div class="card-actions">
+                                            <div className="card-actions">
                                                 <p className='my-8 font-bold text-secondary'>{review?.name}</p>
                                             </div>
                                         </div>

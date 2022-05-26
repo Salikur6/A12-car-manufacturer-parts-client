@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import Spinner from '../Hooks/Spinner';
 
 const PartsItems = () => {
-    const [parts, setParts] = useState([]);
-    console.log(parts)
 
-    useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => setParts(data))
-    }, [])
+
+
+
+    const { data: parts, isLoading } = useQuery('items', () => fetch('http://localhost:5000/items').then(res => res.json()))
+
+
+    if (isLoading) {
+        return <Spinner></Spinner>
+    }
     return (
         <div className='container mx-auto my-20'>
 
@@ -19,18 +23,18 @@ const PartsItems = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
                 {parts.slice(0, 6).map(part =>
-                    <div class="card glass" style={{ maxWidth: '400px' }}>
+                    <div key={part._id} className="card glass" style={{ maxWidth: '400px' }}>
                         <figure><img src={part?.img} style={{ borderRadius: '10px', width: '270px' }} className='mt-5' alt="car!" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title font-bold text-2xl" style={{ fontFamily: " 'Cinzel', serif" }}>{part?.name}</h2>
+                        <div className="card-body">
+                            <h2 className="card-title font-bold text-2xl" style={{ fontFamily: " 'Cinzel', serif" }}>{part?.name}</h2>
                             <p className='text-justify'>{part?.description}</p>
                             <div className='mt-3'>
                                 <p className='font-bold mb-1' style={{ fontFamily: " 'Cinzel', serif" }}>Available Quantity: {part?.availableQuantity}</p>
                                 <p className='font-bold' style={{ fontFamily: " 'Cinzel', serif" }}>Minimum Order Quantity: {part?.minimumQuantity}</p>
                             </div>
                             <p className='font-bold text-center my-3'>Price: ${part?.price}</p>
-                            <div class="card-actions justify-center">
-                                <Link to='/purchase' class="btn btn-primary">Buy Now</Link>
+                            <div className="card-actions justify-center">
+                                <Link to='/purchase' className="btn btn-primary">Buy Now</Link>
                             </div>
                         </div>
                     </div>
