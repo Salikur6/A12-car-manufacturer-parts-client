@@ -32,7 +32,9 @@ const Reviews = () => {
                         enabled: true,
                     }}
 
-                    onSwiper={(swiper) => console.log(swiper)}
+                    onSwiper={(swiper) => {
+                        // console.log(swiper)
+                    }}
                     pagination={{
                         clickable: true,
                     }}

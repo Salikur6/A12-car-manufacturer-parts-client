@@ -22,9 +22,9 @@ const PartsItems = () => {
                 <p></p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
-                {parts.slice(0, 6).map(part =>
+                {parts?.slice(0, 6)?.map(part =>
                     <div key={part._id} className="card glass" style={{ maxWidth: '400px' }}>
-                        <figure><img src={part?.img} style={{ borderRadius: '10px', width: '270px' }} className='mt-5' alt="car!" /></figure>
+                        <figure><img src={part?.img || 'imgbb server down'} style={{ borderRadius: '10px', width: '270px' }} className='mt-5' alt="car!" /></figure>
                         <div className="card-body">
                             <h2 className="card-title font-bold text-2xl" style={{ fontFamily: " 'Cinzel', serif" }}>{part?.name}</h2>
                             <p className='text-justify'>{part?.description}</p>
@@ -34,7 +34,7 @@ const PartsItems = () => {
                             </div>
                             <p className='font-bold text-center my-3'>Price: ${part?.price}</p>
                             <div className="card-actions justify-center">
-                                <Link to='/purchase' className="btn btn-primary">Buy Now</Link>
+                                <Link to={`/purchase/${part?._id}`} className="btn btn-primary">Buy Now</Link>
                             </div>
                         </div>
                     </div>

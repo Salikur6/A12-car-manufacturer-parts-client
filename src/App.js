@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
 
-        <Route path='/purchase' element={
+        <Route path='/purchase/:id' element={
           <PrivetRoute>
             <Purchase></Purchase>
           </PrivetRoute>
