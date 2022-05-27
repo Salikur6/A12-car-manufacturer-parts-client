@@ -31,7 +31,7 @@ const Navbar = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
                             <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='/dashboard'>Dashboard</Link></li>
+                            {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
                             <li><Link to='/login'>Login</Link></li>
 
                             <li><Link to='/register'>Register</Link></li>
@@ -62,7 +62,7 @@ const Navbar = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>About</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                        {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
 
                         <li tabIndex="0">
                             <Link to=''>
@@ -85,7 +85,7 @@ const Navbar = () => {
 
                     {user ?
                         <div className='flex'>
-                            <p className='font-bold mr-3 mt-3 text-sm text-orange-600'>{user?.displayName}'s Account</p>
+                            <p className='font-bold mr-3 mt-3 text-sm text-orange-600 hidden sm:block'>{user?.displayName}'s Account</p>
                             <ul className="menu menu-horizontal p-0 font-semibold ">
 
 
@@ -97,7 +97,9 @@ const Navbar = () => {
                                 </div>
                                 <li><Link to='' onClick={() => signOut(auth)}>SignOut</Link></li>
 
-
+                                <label tabIndex="1" for="dashboard-drawer" className="btn btn-ghost lg:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                                </label>
 
                             </ul>
                         </div>

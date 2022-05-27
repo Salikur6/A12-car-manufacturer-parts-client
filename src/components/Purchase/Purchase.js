@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Spinner from '../Hooks/Spinner';
 
@@ -15,7 +16,7 @@ const Purchase = () => {
 
     const handleNumChange = (e) => {
         const value = (e.target.value);
-        console.log(value)
+        // console.log(value)
         if (value < item?.minimumQuantity) {
             setCustomError('Minimum order 100');
         } else if (value > item?.availableQuantity) {
@@ -26,6 +27,7 @@ const Purchase = () => {
     }
 
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const name = (e.target.name.value);
@@ -34,11 +36,25 @@ const Purchase = () => {
         const country = (e.target.country.value);
         const city = (e.target.city.value);
         const address = e.target.address.value;
-        const numValue = e.target.number.value;
+        const quantity = e.target.number.value;
 
+        const order = { name, email, tel, country, city, address, quantity }
 
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(order),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('Thank you for your order')
+                e.target.reset();
+            })
 
-        console.log({ name, email, tel, country, city, address, numValue })
+        // console.log(order)
 
     }
 
@@ -99,7 +115,7 @@ const Purchase = () => {
                                     <span class="label-text">Country</span>
                                 </label>
                                 <select required name='country' className="select select-bordered w-full max-w-xs" >
-                                    <option selected disabled hidden >Select your Country</option>
+                                    <option disabled hidden >Select your Country</option>
                                     <option value="Bangladesh">Bangladesh</option>
 
                                 </select>
@@ -110,7 +126,7 @@ const Purchase = () => {
                                     <span class="label-text">City</span>
                                 </label>
                                 <select name='city' className="select select-bordered w-full max-w-xs" >
-                                    <option selected disabled hidden>Select your City</option>
+                                    <option disabled hidden >Select your City</option>
                                     <option value="Sylhet">Sylhet</option>
                                     <option value="Sylhet">Dhaka</option>
                                     <option value="Sylhet">Chattogram</option>
@@ -131,7 +147,7 @@ const Purchase = () => {
                                 <label class="label font-bold">
                                     <span class="label-text">Quantity</span>
                                 </label>
-                                <input name='number' type="number" placeholder="number" onChange={handleNumChange} defaultValue={item?.minimumQuantity}
+                                <input name='number' type="number" placeholder="number" className='input input-bordered' onChange={handleNumChange} defaultValue={item?.minimumQuantity}
 
                                 />
                                 <p className='text-red-600 font-bold'> {customError}</p>

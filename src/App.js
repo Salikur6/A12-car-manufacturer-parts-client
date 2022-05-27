@@ -10,6 +10,9 @@ import Navbar from './components/Shared/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import PrivetRoute from './components/Privet/PrivetRoute';
+import MyOrder from './components/Dashboard/MyOrder';
+import AddReview from './components/Dashboard/AddReview';
+import MyProfile from './components/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -29,7 +32,12 @@ function App() {
           <PrivetRoute>
             <Dashboard></Dashboard>
           </PrivetRoute>
-        }></Route>
+        }>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+
+        </Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
