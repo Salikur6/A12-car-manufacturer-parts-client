@@ -7,16 +7,48 @@ import Spinner from '../Hooks/Spinner';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
+    const Swal = require('sweetalert2')
 
-    const { data: userData, isLoading } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`).then(res => res.json()));
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`).then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>
     }
 
+
+    const handleDelete = (id) => {
+        // console.log(id)
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/order/${id}`, {
+                    method: "DELETE",
+                }).then(res => res.json())
+                    .then(data => {
+
+                        console.log(data)
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        refetch();
+                    })
+            }
+        })
+    }
+
     // console.log(userData)
     return (
-        <div>
+        <div className='px-10'>
             <h2 className='text-xl text-center font-semibold mb-4'>Your Total Ordar {userData.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full table-auto">
@@ -109,7 +141,7 @@ const MyOrder = () => {
                                     </td>
                                     <td className="px-6 py-4 ">
                                         {
-                                            !data?.paid ? <button className='btn btn-error mr-2'>Cancle</button>
+                                            !data?.paid ? <button className='btn btn-error mr-2' onClick={() => handleDelete(data?._id)}>Cancle</button>
                                                 :
                                                 <p className='text-error font-bold mr-2'>Can't Cancel</p>
                                         }
@@ -120,7 +152,7 @@ const MyOrder = () => {
                                             <Link to={`/payment/${data?._id}`}>Payment</Link>
 
                                         </button>
-                                            : <p className='text-blue-500 font-bold mr-2'>Already Paid</p>
+                                            : <p className='text-blue-500 font-bold mr-2'>Already Paid <br /> TransactionId: {data?.transaction}</p>
                                     }</td>
                                 </tr>)}
                             </tbody>

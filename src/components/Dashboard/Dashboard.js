@@ -12,7 +12,7 @@ const Dashboard = () => {
                 <h2 className='text-3xl font-semibold text-red-500'>Hey, <span className='text-blue-500'>{user?.displayName}</span> Welcome To Your DashBoard</h2>
                 <h3 className='text-2xl text-blue-500 font-bold mt-10 mb-10'>Welcome To Acura</h3>
             </div>
-            <div className='px-10 mb-20'>
+            <div className='mb-20'>
 
                 <div className="drawer h-full drawer-mobile">
                     <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />

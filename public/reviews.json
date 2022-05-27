@@ -1,27 +1,27 @@
 [
     {
         "name":"Salikur Islam",
-        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines.",
+        "comment":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines.",
          "img":"https://i.ibb.co/2cwfh5D/carengine.jpg"
        },
        {
         "name":"Saifur Rahman",
-        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+        "comment":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
          "img":"https://i.ibb.co/2cwfh5D/carengine.jpg"
        },
         {
         "name":"Jalal Ahmed",
-        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+        "comment":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
          "img":"https://i.ibb.co/2cwfh5D/carengine.jpg"
        },
         {
         "name":"Jalal Ahmed",
-        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+        "comment":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
          "img":"https://i.ibb.co/2cwfh5D/carengine.jpg"
        },
         {
         "name":"Car Engine",
-        "description":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
+        "comment":"A car engine is an internal combustion engine. There are different kinds of internal combustion engines. ",
          "img":"https://i.ibb.co/2cwfh5D/carengine.jpg"
        }
 ]
