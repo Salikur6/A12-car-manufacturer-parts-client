@@ -14,12 +14,12 @@ const MyOrder = () => {
         return <Spinner></Spinner>
     }
 
-    console.log(userData)
+    // console.log(userData)
     return (
         <div>
-            <h2>My order page {userData.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full table-auto">
+            <h2 className='text-xl text-center font-semibold mb-4'>Your Total Ordar {userData.length}</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-full table-auto">
 
                     {/* <thead>
                         <tr>
@@ -53,59 +53,61 @@ const MyOrder = () => {
 
 
 
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
 
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Image
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Product name
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Price
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Quantity
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Address
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Phone
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
                                         Proceed
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        <span class="sr-only">Edit</span>
+                                    <th scope="col" className="px-6 py-3">
+                                        <span className="sr-only">Edit</span>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {userData.map((data) => <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                {userData.map((data) => <tr
+                                    key={data?._id}
+                                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
-                                    <td class="px-6 py-4">
+                                    <td className="px-6 py-4">
                                         <img className='rounded' style={{ width: '100px' }} src={data?.partsImg} alt="" />
                                     </td>
-                                    <td class="px-6 py-4">
-                                        Laptop
+                                    <td className="px-6 py-4">
+                                        {data?.parts}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td className="px-6 py-4">
                                         ${data?.partsPrice}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td className="px-6 py-4">
                                         {data?.quantity}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td className="px-6 py-4">
                                         {data?.address}, {data?.city}, {data?.country}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td className="px-6 py-4">
                                         {data?.tel}
                                     </td>
-                                    <td class="px-6 py-4 ">
+                                    <td className="px-6 py-4 ">
                                         {
                                             !data?.paid ? <button className='btn btn-error mr-2'>Cancle</button>
                                                 :

@@ -86,36 +86,36 @@ const Purchase = () => {
                 <div>
 
 
-                    <div class="hero bg-base-300 ">
+                    <div className="hero bg-base-300 ">
 
                         <form className='glass w-full p-8 sm:w-4/5 md:w-1/2 lg:w-2/5 2xl:w-1/2 xl:w-2/5 my-10' onSubmit={handleSubmit}>
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">Full Name</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">Full Name</span>
                                 </label>
                                 <input className="input input-bordered" name='name' type="text" placeholder="Full Name" value={user?.displayName} readOnly required />
                             </div>
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">Email</span>
                                 </label>
                                 <input className="input input-bordered" name='email' type="email" placeholder="Your Email" value={user?.email} readOnly required />
                             </div>
 
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">Number</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">Number</span>
                                 </label>
                                 <input name='tel' className="input input-bordered" type="tel" placeholder="Mobile Number" required />
                             </div>
 
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">Country</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">Country</span>
                                 </label>
                                 <select required name='country' className="select select-bordered w-full max-w-xs" >
                                     <option disabled hidden >Select your Country</option>
@@ -124,9 +124,9 @@ const Purchase = () => {
                                 </select>
                             </div>
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">City</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">City</span>
                                 </label>
                                 <select name='city' className="select select-bordered w-full max-w-xs" >
                                     <option disabled hidden >Select your City</option>
@@ -139,16 +139,16 @@ const Purchase = () => {
                                 </select>
                             </div>
 
-                            <div class="form-control">
-                                <label class="label font-bold">
-                                    <span class="label-text">Street Address</span>
+                            <div className="form-control">
+                                <label className="label font-bold">
+                                    <span className="label-text">Street Address</span>
                                 </label>
-                                <textarea name='address' className='textarea textarea-bordered' placeholder='Street Address' />
+                                <textarea name='address' className='textarea textarea-bordered' placeholder='Street Address' required />
                             </div>
 
                             <div>
-                                <label class="label font-bold">
-                                    <span class="label-text">Quantity</span>
+                                <label className="label font-bold">
+                                    <span className="label-text">Quantity</span>
                                 </label>
                                 <input name='number' type="number" placeholder="number" className='input input-bordered' onChange={handleNumChange} defaultValue={item?.minimumQuantity}
 
