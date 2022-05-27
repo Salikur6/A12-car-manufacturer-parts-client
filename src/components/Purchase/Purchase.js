@@ -37,8 +37,11 @@ const Purchase = () => {
         const city = (e.target.city.value);
         const address = e.target.address.value;
         const quantity = e.target.number.value;
+        const parts = item?.name;
+        const partsImg = item?.img;
+        const partsPrice = item?.price;
 
-        const order = { name, email, tel, country, city, address, quantity }
+        const order = { parts, partsImg, partsPrice, name, email, tel, country, city, address, quantity }
 
         fetch('http://localhost:5000/order', {
             method: 'POST',

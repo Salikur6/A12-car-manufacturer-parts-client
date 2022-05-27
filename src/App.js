@@ -13,6 +13,7 @@ import PrivetRoute from './components/Privet/PrivetRoute';
 import MyOrder from './components/Dashboard/MyOrder';
 import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
+import Payment from './components/Payment/Payment';
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
         <Route path='/purchase/:id' element={
           <PrivetRoute>
             <Purchase></Purchase>
+          </PrivetRoute>
+        }></Route>
+
+        <Route path='/payment/:id' element={
+          <PrivetRoute>
+            <Payment></Payment>
           </PrivetRoute>
         }></Route>
 

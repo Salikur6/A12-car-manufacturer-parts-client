@@ -34,7 +34,7 @@ const PartsItems = () => {
                             </div>
                             <p className='font-bold text-center my-3'>Price: ${part?.price}</p>
                             <div className="card-actions justify-center">
-                                <Link to={`/purchase/${part?._id}`} className="btn btn-primary">Buy Now</Link>
+                                <Link to={`/purchase/${part?._id}`} className="btn btn-primary">place order</Link>
                             </div>
                         </div>
                     </div>
