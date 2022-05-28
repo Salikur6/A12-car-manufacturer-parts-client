@@ -13,7 +13,6 @@ const Navbar = () => {
 
     useEffect(() => {
         themeChange(false);
-
     }, [])
 
     if (loading) {
@@ -29,7 +28,6 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-semibold">
                             <li><Link to='/'>Home</Link></li>
-                            <li><Link to='/about'>About</Link></li>
                             <li><Link to='/blogs'>Blogs</Link></li>
                             {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
                             <li><Link to='/myportfolio'>My Portfolio</Link></li>
@@ -62,7 +60,6 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 font-semibold ">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about'>About</Link></li>
                         <li><Link to='/blogs'>Blogs</Link></li>
                         {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
 

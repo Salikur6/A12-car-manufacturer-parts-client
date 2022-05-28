@@ -20,7 +20,7 @@ const Reviews = () => {
     //         .then(data => setReviews(data))
     // }, [])
 
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/reviews').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://shielded-reef-19583.herokuapp.com/reviews').then(res => res.json()))
 
 
     if (isLoading) {
@@ -34,13 +34,11 @@ const Reviews = () => {
                 <h3 className='text-2xl font-bold text-white text-center'>Client Reviews</h3>
                 <Swiper
 
-
                     slidesPerView={1}
                     spaceBetween={30}
                     keyboard={{
                         enabled: true,
                     }}
-
                     onSwiper={(swiper) => {
                         // console.log(swiper)
                     }}

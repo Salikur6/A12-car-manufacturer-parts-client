@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [user] = useAuthState(auth);
     const Swal = require('sweetalert2')
 
-    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`).then(res => res.json()));
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`).then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>
@@ -29,7 +29,7 @@ const MyOrder = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`https://shielded-reef-19583.herokuapp.com/order/${id}`, {
                     method: "DELETE",
                 }).then(res => res.json())
                     .then(data => {

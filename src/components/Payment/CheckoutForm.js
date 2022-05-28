@@ -18,7 +18,7 @@ const CheckoutForm = ({ orderId }) => {
     // console.log(totalPrice);
     // console.log(orderId);
     useEffect(() => {
-        fetch(`http://localhost:5000/create-payment-intent`, {
+        fetch(`https://shielded-reef-19583.herokuapp.com/create-payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -91,7 +91,7 @@ const CheckoutForm = ({ orderId }) => {
             //
             // console.log(paymentIntent);
 
-            fetch(`http://localhost:5000/order/${orderId?._id}`, {
+            fetch(`https://shielded-reef-19583.herokuapp.com/order/${orderId?._id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
