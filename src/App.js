@@ -15,6 +15,7 @@ import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
 import Payment from './components/Payment/Payment';
 import Blogs from './components/Blogs/Blogs';
+import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         </Route>
 
         <Route path='/Blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
