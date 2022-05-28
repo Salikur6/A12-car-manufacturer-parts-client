@@ -87,7 +87,7 @@ const MyPortfolio = () => {
             <div class="card hover:bg-orange-400 transition-all card-side bg-base-200 mb-5 shadow-xl p-4">
                 <figure><img style={{ width: '75px' }} src={education} alt="Movie" /></figure>
                 <div class="card-body text-secondary">
-                    <p>2017-2019</p>
+                    <p className='font-semibold'>2017-2019</p>
                     <h2 class="card-title font-bold">Secondary School Certificate (S.S.C)</h2>
                     <p className='font-bold'>Gotatikor Bi-lateral High School</p>
 
@@ -96,7 +96,7 @@ const MyPortfolio = () => {
             <div class="card hover:bg-orange-400 transition-all  card-side mb-5 bg-base-200 shadow-xl  p-4">
                 <figure><img style={{ width: '75px' }} src={education} alt="Movie" /></figure>
                 <div class="card-body text-secondary">
-                    <p>2019-2021</p>
+                    <p className='font-semibold'>2019-2021</p>
                     <h2 class="card-title font-bold">Higher Secondary Certificate (H.S.C)</h2>
                     <p className='font-bold'>Dakshin Surma Govt. College
                     </p>
@@ -126,20 +126,21 @@ const MyPortfolio = () => {
 
 
                     <div>
-                        <img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={furnitureimg} alt="" />
+                        <a href="https://furniture-werehouse.web.app/" target='blank' ><img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={furnitureimg} alt="Furniture Werehouse img" /></a>
                     </div>
 
-                    <div>
-                        <div class="badge">neutral</div>
-                        <div class="badge badge-primary">primary</div>
-                        <div class="badge badge-secondary">secondary</div>
-                        <div class="badge badge-accent">accent</div>
-                        <div class="badge badge-ghost">ghost</div>
+                    <div className='p-4'>
+                        <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div>
+                        <div class="badge mr-3 mb-2 font-bold">React</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
-
-
-                        <h3>kdk</h3>
-                        <div className='text-center mb-4'> <button className=' btn btn-success'>Preview</button></div>
+                        <div className='text-center my-4'> <a href='https://furniture-werehouse.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>
 
                 </div>
@@ -158,20 +159,22 @@ const MyPortfolio = () => {
                     {/* portfolio img */}
 
                     <div>
-                        <img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={foodsiteimg} alt="" />
+                        <a href="https://fatobook-food-catering.web.app/" target='blank'> <img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={foodsiteimg} alt="Home Food site img" /></a>
+
                     </div>
 
-                    <div>
-                        <div class="badge">neutral</div>
-                        <div class="badge badge-primary">primary</div>
-                        <div class="badge badge-secondary">secondary</div>
-                        <div class="badge badge-accent">accent</div>
-                        <div class="badge badge-ghost">ghost</div>
+                    <div className='p-4'>
+                        <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div>
+                        <div class="badge mr-3 mb-2 font-bold">React</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
-
-
-                        <h3>kdk</h3>
-                        <div className='text-center mb-4'> <button className=' btn btn-success'>Preview</button></div>
+                        <div className='text-center my-4'> <a href='https://fatobook-food-catering.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>
 
                 </div>
@@ -190,20 +193,22 @@ const MyPortfolio = () => {
 
 
                     <div>
-                        <img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={hotelsiteimg} alt="" />
+                        <a href="https://salik-hotel-practic.web.app/" target='blank'>  <img className='w-full sm:w-[400px] lg:w-full mx-auto h-[250px]' src={hotelsiteimg} alt="hotel site img" /></a>
+
                     </div>
 
-                    <div>
-                        <div class="badge">neutral</div>
-                        <div class="badge badge-primary">primary</div>
-                        <div class="badge badge-secondary">secondary</div>
-                        <div class="badge badge-accent">accent</div>
-                        <div class="badge badge-ghost">ghost</div>
+                    <div className='p-4'>
+                        {/* <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div> */}
+                        <div class="badge mr-3 mb-2 font-bold">React</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
-
-
-                        <h3>kdk</h3>
-                        <div className='text-center mb-4'> <button className=' btn btn-success'>Preview</button></div>
+                        <div className='text-center my-4'> <a href='https://salik-hotel-practic.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>
 
                 </div>

@@ -20,8 +20,8 @@ const Payment = () => {
     return (
         <div className='container mx-auto'>
 
-            <div className="card mt-20 mx-auto w-full md:w-96 bg-base-100 glass p-10 shadow-xl">
-                <h2 className="text-xs font-bold text-primary">Hello, {orderId?.name}</h2>
+            <div className="card mt-20 mx-auto w-full md:w-96 bg-black text-accent glass  p-10 shadow-xl">
+                <h2 className="text-xs font-bold text-blue-400">Hello, {orderId?.name}</h2>
                 <p className='font-semibold my-2 text-xl'>Please Pay For {orderId?.parts}</p>
                 <h3 className='text-sm font- mb-1'>Order Summary</h3>
                 <hr className='border-2  bg-black mb-3' />
@@ -36,7 +36,7 @@ const Payment = () => {
 
             {/* -------- */}
 
-            <div className="card md:w-96 shadow mx-auto mt-8 glass">
+            <div className="card text-green-500 bg-slate-700 md:w-96 shadow mx-auto mt-8 glass">
                 <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm orderId={orderId} />
@@ -45,7 +45,7 @@ const Payment = () => {
             </div>
 
 
-            <div className="bg-white min-h-screen flex justify-center items-center">
+            <div className="py-20 flex justify-center items-center">
                 <div className="space-y-16">
                     <div className="md:w-96 w-full h-56 m-auto bg-red-100 rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-110">
 

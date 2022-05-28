@@ -119,9 +119,9 @@ const CheckoutForm = ({ orderId }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: '#0000DC',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#000C66',
                                 },
                             },
                             invalid: {
