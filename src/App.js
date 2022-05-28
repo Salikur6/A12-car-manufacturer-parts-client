@@ -14,6 +14,7 @@ import MyOrder from './components/Dashboard/MyOrder';
 import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
 import Payment from './components/Payment/Payment';
+import Blogs from './components/Blogs/Blogs';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
         </Route>
 
+        <Route path='/Blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>

@@ -7,16 +7,25 @@ import { Navigation, Pagination, Keyboard } from 'swiper';
 import client from '../../img/client.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useQuery } from 'react-query';
+import Spinner from '../Hooks/Spinner';
 
 const Reviews = () => {
 
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch('reviews.json')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('reviews.json')
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [])
+
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/reviews').then(res => res.json()))
+
+
+    if (isLoading) {
+        return <Spinner></Spinner>
+    }
     return (
         <div style={{ backgroundColor: '#1089E7' }}>
             <div className='container mx-auto my-20 pb-10'>
@@ -49,14 +58,15 @@ const Reviews = () => {
                             <div className='lg:w-1/2 mx-auto my-10'>
                                 <div className="card glass card-side shadow-xl">
                                     <div className='shrink-0'>
-                                        <figure><img className='p-5 w-[150px] sm:w-full rounded-full' src={review?.img || client} alt="Client img" /></figure>
+                                        <figure><img className='p-5 w-[150px] h-[210px] sm:w-[210px] rounded-full' src={review?.img || client} alt="Client img" /></figure>
                                     </div>
                                     <div>
                                     </div>
                                     <div className=" px-2 table">
 
                                         <div style={{ display: 'table-cell', verticalAlign: 'middle' }}>
-                                            <p className='text-justify text-white'>{review?.description}</p>
+                                            <p className='text-justify text-white'>{review?.comment}</p>
+                                            <p className='font-semibold text-yellow-400'>Rating: {review?.rating}</p>
                                             <div className="card-actions">
                                                 <p className='my-8 font-bold text-secondary'>{review?.name}</p>
                                             </div>
