@@ -1,9 +1,10 @@
 import React from 'react';
+import construction from '../../img/construction.jpg';
 
 const MyProfile = () => {
     return (
         <div>
-            <h2>This is My profile page</h2>
+            <img className='w-full h-[100vh]' src={construction} alt="" />
         </div>
     );
 };

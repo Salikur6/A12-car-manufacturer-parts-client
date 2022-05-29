@@ -58,9 +58,9 @@ function App() {
             <Dashboard></Dashboard>
           </PrivetRoute>
         }>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
-          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='alluser' element={<PrivetAdmin><AllUser></AllUser></PrivetAdmin>}></Route>
           <Route path='manageallorders' element={<PrivetAdmin><ManageAllOrders></ManageAllOrders></PrivetAdmin>}></Route>
           <Route path='addproduct' element={<PrivetAdmin><AddProduct></AddProduct></PrivetAdmin>}></Route>
