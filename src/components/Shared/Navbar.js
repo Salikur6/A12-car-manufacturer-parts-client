@@ -42,7 +42,7 @@ const Navbar = () => {
 
                             <li><Link to='/register'>Register</Link></li>
 
-                            <li tabIndex="0">
+                            {/* <li tabIndex="0">
                                 <Link to=''>
                                     Theme
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
@@ -56,7 +56,7 @@ const Navbar = () => {
                                         <button data-set-theme="dark" data-act-class="ACTIVECLASS">Dark</button>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <Link to='/' className="normal-case text-xl"><img style={{ width: '75px', borderRadius: '50%' }} src={logo} alt="website logo" /></Link>
@@ -78,11 +78,11 @@ const Navbar = () => {
                             </Link>
                             <ul className="p-2 bg-base-100">
                                 <li>
-                                    <button data-set-theme="light" data-act-class="ACTIVECLASS">Light</button>
+                                    <button data-set-theme="light" >Light</button>
                                 </li>
 
                                 <li>
-                                    <button data-set-theme="dark" data-act-class="ACTIVECLASS">Dark</button>
+                                    <button data-set-theme="dark">Dark</button>
                                 </li>
                             </ul>
                         </li>

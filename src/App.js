@@ -21,9 +21,19 @@ import PrivetAdmin from './components/Privet/PrivetAdmin';
 import NotFound from './components/NotFound/NotFound';
 import ManageAllOrders from './components/Dashboard/ManageAllOrders';
 import AddProduct from './components/Dashboard/AddProduct';
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 
 function App() {
+
+
+
+  useEffect(() => {
+    themeChange(false)
+    // 👆 false parameter is required for react project
+  }, [])
+
   return (
     <div>
       <ToastContainer />
