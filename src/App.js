@@ -18,6 +18,9 @@ import Blogs from './components/Blogs/Blogs';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import AllUser from './components/Dashboard/AllUser';
 import PrivetAdmin from './components/Privet/PrivetAdmin';
+import NotFound from './components/NotFound/NotFound';
+import ManageAllOrders from './components/Dashboard/ManageAllOrders';
+import AddProduct from './components/Dashboard/AddProduct';
 
 
 function App() {
@@ -49,6 +52,8 @@ function App() {
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='alluser' element={<PrivetAdmin><AllUser></AllUser></PrivetAdmin>}></Route>
+          <Route path='manageallorders' element={<PrivetAdmin><ManageAllOrders></ManageAllOrders></PrivetAdmin>}></Route>
+          <Route path='addproduct' element={<PrivetAdmin><AddProduct></AddProduct></PrivetAdmin>}></Route>
 
         </Route>
 
@@ -56,6 +61,10 @@ function App() {
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+
+
+        <Route path='*' element={<NotFound></NotFound>}></Route>
+
       </Routes>
       <Footer></Footer>
     </div>
