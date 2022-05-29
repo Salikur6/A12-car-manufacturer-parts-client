@@ -2,9 +2,17 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Spinner from '../Hooks/Spinner';
+import useAdmin from '../Hooks/useAdmin';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
+    const [admin, adminLoading] = useAdmin(user);
+
+    if (adminLoading) {
+        return <Spinner></Spinner>
+    }
+    console.log(admin)
     return (
         <>
 
@@ -29,10 +37,10 @@ const Dashboard = () => {
                         <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                             {/* <!-- Sidebar content here --> */}
-                            <li><Link to=''>My Orders</Link></li>
+                            {!admin && <li><Link to=''>My Orders</Link></li>}
                             <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
-                            <li><Link to='/dashboard/addreview'>Add Review</Link></li>
-                            <li><Link to='/dashboard/alluser'>All User</Link></li>
+                            {!admin && <li><Link to='/dashboard/addreview'>Add Review</Link></li>}
+                            {admin && <li><Link to='/dashboard/alluser'>All User</Link></li>}
                         </ul>
 
                     </div>

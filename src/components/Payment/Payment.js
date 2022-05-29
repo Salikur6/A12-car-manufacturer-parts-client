@@ -2,7 +2,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Spinner from '../Hooks/Spinner';
 import CheckoutForm from './CheckoutForm';
 
@@ -10,13 +10,19 @@ const stripePromise = loadStripe('pk_test_51L45iXEnMw91zFUBc7sZTlUkKmV5EdKt2SWFW
 
 const Payment = () => {
     const { id } = useParams();
+    const navigate = useNavigate()
 
     const { data: orderId, isLoading } = useQuery('orderid', () => fetch(`https://shielded-reef-19583.herokuapp.com/orderid/${id}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`
         }
-    }).then(res => res.json()))
+    }).then(res => {
+        if (res.status === 403) {
+            navigate('/')
+        }
+        return res.json()
+    }))
 
 
     if (isLoading) {

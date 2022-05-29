@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import loginBg from '../../img/loginbg.jpg';
 import google from '../../img/social-icon/google.png'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinner from '../Hooks/Spinner';
+import useToken from '../Hooks/useToken';
 
 const Register = () => {
+
     const [checked, setChecked] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleChecked = e => {
         setChecked(e.target.checked);
     }
+
+
+    let from = location.state?.from?.pathname || "/";
 
     const [
         createUserWithEmailAndPassword,
@@ -26,6 +33,14 @@ const Register = () => {
 
 
     console.log(user || googleUser)
+    const [token] = useToken(user || googleUser);
+
+    useEffect(() => {
+        if (token) {
+
+            navigate(from, { replace: true });
+        }
+    }, [token, navigate, from])
 
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);

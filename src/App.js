@@ -17,6 +17,7 @@ import Payment from './components/Payment/Payment';
 import Blogs from './components/Blogs/Blogs';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import AllUser from './components/Dashboard/AllUser';
+import PrivetAdmin from './components/Privet/PrivetAdmin';
 
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='alluser' element={<AllUser></AllUser>}></Route>
+          <Route path='alluser' element={<PrivetAdmin><AllUser></AllUser></PrivetAdmin>}></Route>
 
         </Route>
 

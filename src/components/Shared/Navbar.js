@@ -11,6 +11,11 @@ import { signOut } from 'firebase/auth';
 const Navbar = () => {
     const [user, loading] = useAuthState(auth);
 
+    const handleSignOut = () => {
+        signOut(auth)
+        localStorage.removeItem('access-token');
+    }
+
     useEffect(() => {
         themeChange(false);
     }, [])
@@ -96,7 +101,7 @@ const Navbar = () => {
                                     <div className="grid flex-grow h-7 card bg-black rounded-box place-items-center w-1"></div>
                                     {/* <div className="divider divider-horizontal"></div> */}
                                 </div>
-                                <li><Link to='' onClick={() => signOut(auth)}>SignOut</Link></li>
+                                <li><Link to='' onClick={handleSignOut}>SignOut</Link></li>
 
                                 <label tabIndex="1" htmlFor="dashboard-drawer" className="btn btn-ghost lg:hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

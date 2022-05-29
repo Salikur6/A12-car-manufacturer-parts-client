@@ -1,20 +1,30 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinner from '../Hooks/Spinner';
+import { signOut } from 'firebase/auth';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const Swal = require('sweetalert2')
+    const navigate = useNavigate();
 
-    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`, {
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`
         }
-    }).then(res => res.json()));
+    }).then(res => {
+        console.log(res)
+        if (res.status === 401 || res.status === 403) {
+            signOut(auth)
+            localStorage.removeItem('access-token');
+            navigate('/')
+        }
+        return res.json()
+    }));
 
     if (isLoading) {
         return <Spinner></Spinner>

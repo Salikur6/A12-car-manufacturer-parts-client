@@ -1,4 +1,6 @@
+import { signOut } from "firebase/auth";
 import { useState } from "react";
+import auth from "../../firebase.init";
 
 const useToken = (user) => {
     const [token, setToken] = useState('');
@@ -18,7 +20,14 @@ const useToken = (user) => {
             },
             body: JSON.stringify({ email, name, img, providerId })
         })
-            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth)
+                    localStorage.removeItem('access-token');
+                }
+                return res.json()
+            })
             .then(data => {
                 setToken(data)
                 console.log(data);

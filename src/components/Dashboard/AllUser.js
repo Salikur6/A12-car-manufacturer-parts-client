@@ -1,13 +1,42 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Spinner from '../Hooks/Spinner';
 
 const AllUser = () => {
+    const navigate = useNavigate();
     const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
     if (isLoading) {
         return <Spinner></Spinner>
     }
+
+
     console.log(users)
+
+
+    const handleAdmin = (email) => {
+        console.log(email);
+
+        fetch(`http://localhost:5000/user/admin/${email}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('access-token')}`
+            }
+
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    navigate('/')
+                    toast.error('Failed to Make Admin')
+                }
+                return res.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
+    }
 
     return (
         <div>
@@ -23,15 +52,19 @@ const AllUser = () => {
                         </tr>
                     </thead>
                     <tbody>
-
                         {
                             users.map((user, index) => <tr key={user?._id}>
                                 <th>{index + 1}</th>
-                                <td>{user?.name}</td>
+                                <td>{user?.name} {user?.role === 'admin' && <div class="badge badge-primary">Admin</div>
+                                }</td>
                                 <td>{user?.email}</td>
                                 <td>
-                                    <button className='btn btn-success font-bold'>Make Admin</button>
-                                    <p className='mt-2'><button className='btn btn-error font-bold'>Cancel</button></p>
+
+
+                                    {user?.role !== 'admin' && <button className='btn btn-success font-bold' onClick={() => handleAdmin(user?.email)}>Make Admin</button>}
+
+
+                                    <p className='mt-2'><button className='btn btn-error font-bold'>Remove User</button></p>
                                 </td>
                                 <td>
 
