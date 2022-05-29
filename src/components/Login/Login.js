@@ -31,7 +31,7 @@ const Login = () => {
     );
 
     const [token] = useToken(googleUser || signInUser);
-    console.log(token)
+    // console.log(token)
 
     useEffect(() => {
         if (token) {

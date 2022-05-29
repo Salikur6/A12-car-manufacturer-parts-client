@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
-    console.log(user)
+    // console.log(user)
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -26,14 +26,14 @@ const AddReview = () => {
         }).then(res => res.json())
             .then(data => {
 
-                console.log(data)
+                // console.log(data)
                 if (data.insertedId) {
                     toast('Review added Successfuly, You can check on Home page Review section ')
                 }
                 e.target.reset();
             })
 
-        console.log(review)
+        // console.log(review)
 
 
     }

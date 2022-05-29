@@ -32,7 +32,7 @@ const Register = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
 
-    console.log(user || googleUser)
+    // console.log(user || googleUser)
     const [token] = useToken(user || googleUser);
 
     useEffect(() => {

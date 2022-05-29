@@ -12,7 +12,7 @@ const Dashboard = () => {
     if (adminLoading) {
         return <Spinner></Spinner>
     }
-    console.log(admin)
+    // console.log(admin)
     return (
         <>
 

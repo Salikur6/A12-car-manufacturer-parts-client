@@ -17,7 +17,7 @@ const MyOrder = () => {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`
         }
     }).then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.status === 401 || res.status === 403) {
             signOut(auth)
             localStorage.removeItem('access-token');

@@ -12,11 +12,11 @@ const AllUser = () => {
     }
 
 
-    console.log(users)
+    // console.log(users)
 
 
     const handleAdmin = (email) => {
-        console.log(email);
+        // console.log(email);
 
         fetch(`https://shielded-reef-19583.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
