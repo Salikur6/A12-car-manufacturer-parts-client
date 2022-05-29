@@ -11,7 +11,12 @@ const stripePromise = loadStripe('pk_test_51L45iXEnMw91zFUBc7sZTlUkKmV5EdKt2SWFW
 const Payment = () => {
     const { id } = useParams();
 
-    const { data: orderId, isLoading } = useQuery('orderid', () => fetch(`https://shielded-reef-19583.herokuapp.com/orderid/${id}`).then(res => res.json()))
+    const { data: orderId, isLoading } = useQuery('orderid', () => fetch(`https://shielded-reef-19583.herokuapp.com/orderid/${id}`, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('access-token')}`
+        }
+    }).then(res => res.json()))
 
 
     if (isLoading) {

@@ -21,11 +21,8 @@ const Dashboard = () => {
                         <div>
 
 
-
                             <Outlet></Outlet>
                         </div>
-
-
                     </div>
 
                     <div className="drawer-side">
@@ -35,6 +32,7 @@ const Dashboard = () => {
                             <li><Link to=''>My Orders</Link></li>
                             <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
                             <li><Link to='/dashboard/addreview'>Add Review</Link></li>
+                            <li><Link to='/dashboard/alluser'>All User</Link></li>
                         </ul>
 
                     </div>

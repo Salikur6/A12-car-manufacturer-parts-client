@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import loginBg from '../../img/loginbg.jpg';
@@ -6,6 +6,7 @@ import google from '../../img/social-icon/google.png'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Spinner from '../Hooks/Spinner';
 import { toast } from 'react-toastify';
+import useToken from '../Hooks/useToken';
 
 
 const Login = () => {
@@ -29,9 +30,16 @@ const Login = () => {
         auth
     );
 
-    if (googleUser || signInUser) {
-        navigate(from, { replace: true });
-    };
+    const [token] = useToken(googleUser || signInUser);
+    console.log(token)
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        };
+    }, [token, navigate, from])
+
+
 
     const [userInfo, setUserInfo] = useState({
         email: '',

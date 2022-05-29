@@ -8,7 +8,12 @@ const PartsItems = () => {
 
 
 
-    const { data: parts, isLoading } = useQuery('items', () => fetch('https://shielded-reef-19583.herokuapp.com/items').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('items', () => fetch('https://shielded-reef-19583.herokuapp.com/items', {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('access-token')}`
+        }
+    }).then(res => res.json()))
 
 
     if (isLoading) {

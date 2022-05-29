@@ -48,11 +48,11 @@ const MyPortfolio = () => {
 
 
             <h2 className='text-orange-500 text-3xl font-bold my-5'>Skills and languages</h2>
-            <div class="card  card-side bg-base-100 mb-5 shadow-xl p-4">
+            <div className="card  card-side bg-base-100 mb-5 shadow-xl p-4">
                 <div className='table'>
                     <p style={{ verticalAlign: 'middle' }} className='table-cell font-bold text-blue-500 p-3 text-lg'>Skills: </p>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     <div className='p-8'>
                         <div className='flex flex-wrap gap-5'>
 
@@ -84,20 +84,20 @@ const MyPortfolio = () => {
                 <h2 className='text-orange-500 text-4xl font-bold my-5'>Education</h2>
             </div>
 
-            <div class="card hover:bg-orange-400 transition-all card-side bg-base-200 mb-5 shadow-xl p-4">
+            <div className="card hover:bg-orange-400 transition-all card-side bg-base-200 mb-5 shadow-xl p-4">
                 <figure><img style={{ width: '75px' }} src={education} alt="Movie" /></figure>
-                <div class="card-body text-secondary">
+                <div className="card-body text-secondary">
                     <p className='font-semibold'>2017-2019</p>
-                    <h2 class="card-title font-bold">Secondary School Certificate (S.S.C)</h2>
+                    <h2 className="card-title font-bold">Secondary School Certificate (S.S.C)</h2>
                     <p className='font-bold'>Gotatikor Bi-lateral High School</p>
 
                 </div>
             </div>
-            <div class="card hover:bg-orange-400 transition-all  card-side mb-5 bg-base-200 shadow-xl  p-4">
+            <div className="card hover:bg-orange-400 transition-all  card-side mb-5 bg-base-200 shadow-xl  p-4">
                 <figure><img style={{ width: '75px' }} src={education} alt="Movie" /></figure>
-                <div class="card-body text-secondary">
+                <div className="card-body text-secondary">
                     <p className='font-semibold'>2019-2021</p>
-                    <h2 class="card-title font-bold">Higher Secondary Certificate (H.S.C)</h2>
+                    <h2 className="card-title font-bold">Higher Secondary Certificate (H.S.C)</h2>
                     <p className='font-bold'>Dakshin Surma Govt. College
                     </p>
 
@@ -130,15 +130,15 @@ const MyPortfolio = () => {
                     </div>
 
                     <div className='p-4'>
-                        <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div>
-                        <div class="badge mr-3 mb-2 font-bold">React</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Express</div>
+                        <div className="badge mr-3 mb-2 font-bold">React</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
                         <div className='text-center my-4'> <a href='https://furniture-werehouse.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>
@@ -164,15 +164,15 @@ const MyPortfolio = () => {
                     </div>
 
                     <div className='p-4'>
-                        <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div>
-                        <div class="badge mr-3 mb-2 font-bold">React</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Express</div>
+                        <div className="badge mr-3 mb-2 font-bold">React</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
                         <div className='text-center my-4'> <a href='https://fatobook-food-catering.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>
@@ -198,15 +198,15 @@ const MyPortfolio = () => {
                     </div>
 
                     <div className='p-4'>
-                        {/* <div class="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Express</div> */}
-                        <div class="badge mr-3 mb-2 font-bold">React</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Node</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
-                        <div class="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
+                        {/* <div className="badge mr-3 mb-2 font-bold badge-secondary">MongoDB</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Express</div> */}
+                        <div className="badge mr-3 mb-2 font-bold">React</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Node</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-warning">JavaScript</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-error">Firebase</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-primary">Bootstrap</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-secondary">CSS</div>
+                        <div className="badge mr-3 mb-2 font-bold badge-ghost">HTML</div>
 
                         <div className='text-center my-4'> <a href='https://salik-hotel-practic.web.app/' target='blank' className=' btn btn-success'>Preview</a></div>
                     </div>

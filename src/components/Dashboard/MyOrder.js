@@ -9,7 +9,12 @@ const MyOrder = () => {
     const [user] = useAuthState(auth);
     const Swal = require('sweetalert2')
 
-    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`).then(res => res.json()));
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('access-token')}`
+        }
+    }).then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>

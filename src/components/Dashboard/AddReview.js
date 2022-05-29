@@ -47,8 +47,8 @@ const AddReview = () => {
 
             <form onSubmit={handleSubmit} className='w-full sm:w-1/2 sm:pl-40 p-5'>
                 <div className='mb-5'>
-                    <label class="label">
-                        <span class="label-text">Rating</span>
+                    <label className="label">
+                        <span className="label-text">Rating</span>
                     </label>
                     <input type="number" placeholder='Rating Count' className="input input-bordered input-success w-full max-w-xs" name="number" min='1' max='5' required />
                 </div>
