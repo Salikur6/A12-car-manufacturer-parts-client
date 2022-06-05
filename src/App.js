@@ -21,23 +21,18 @@ import PrivetAdmin from './components/Privet/PrivetAdmin';
 import NotFound from './components/NotFound/NotFound';
 import ManageAllOrders from './components/Dashboard/ManageAllOrders';
 import AddProduct from './components/Dashboard/AddProduct';
-import { useEffect } from 'react'
-import { themeChange } from 'theme-change'
+import { useState } from 'react'
+import MyOrder2 from './components/Dashboard/MyOrder2';
 
 
 function App() {
 
-
-
-  useEffect(() => {
-    themeChange(false)
-    // 👆 false parameter is required for react project
-  }, [])
+  const [dark, setDark] = useState(false);
 
   return (
-    <div>
+    <div data-theme={dark ? 'dark' : 'light'}>
       <ToastContainer />
-      <Navbar></Navbar>
+      <Navbar setDark={setDark} dark={dark}></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
 
@@ -59,6 +54,7 @@ function App() {
           </PrivetRoute>
         }>
           <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
+          <Route path='myorder2' element={<MyOrder2></MyOrder2>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='alluser' element={<PrivetAdmin><AllUser></AllUser></PrivetAdmin>}></Route>

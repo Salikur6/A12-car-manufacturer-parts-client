@@ -11,7 +11,7 @@ const MyOrder = () => {
     const Swal = require('sweetalert2')
     const navigate = useNavigate();
 
-    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`, {
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`
@@ -44,7 +44,7 @@ const MyOrder = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://shielded-reef-19583.herokuapp.com/order/${id}`, {
+                fetch(`http://localhost:5000/order/${id}`, {
                     method: "DELETE",
                 }).then(res => res.json())
                     .then(data => {
@@ -104,7 +104,6 @@ const MyOrder = () => {
                         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-
                                     <th scope="col" className="px-6 py-3">
                                         Image
                                     </th>
@@ -132,7 +131,7 @@ const MyOrder = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {userData.map((data) => <tr
+                                {userData?.map((data) => <tr
                                     key={data?._id}
                                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
@@ -156,7 +155,7 @@ const MyOrder = () => {
                                     </td>
                                     <td className="px-6 py-4 ">
                                         {
-                                            !data?.paid ? <button className='btn btn-error mr-2' onClick={() => handleDelete(data?._id)}>Cancle</button>
+                                            !data?.paid ? <button className='btn btn-error mr-2' onClick={() => handleDelete(data?._id)}>Cancle Order</button>
                                                 :
                                                 <p className='text-error font-bold mr-2'>Can't Cancel</p>
                                         }

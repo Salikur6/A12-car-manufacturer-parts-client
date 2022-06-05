@@ -12,7 +12,7 @@ const Payment = () => {
     const { id } = useParams();
     const navigate = useNavigate()
 
-    const { data: orderId, isLoading } = useQuery('orderid', () => fetch(`https://shielded-reef-19583.herokuapp.com/orderid/${id}`, {
+    const { data: orderId, isLoading } = useQuery('orderid', () => fetch(`http://localhost:5000/orderid/${id}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`

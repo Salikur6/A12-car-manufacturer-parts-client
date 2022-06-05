@@ -6,7 +6,7 @@ import Spinner from '../Hooks/Spinner';
 
 const AllUser = () => {
     const navigate = useNavigate();
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shielded-reef-19583.herokuapp.com/users').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
     if (isLoading) {
         return <Spinner></Spinner>
     }
@@ -18,7 +18,7 @@ const AllUser = () => {
     const handleAdmin = (email) => {
         // console.log(email);
 
-        fetch(`https://shielded-reef-19583.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

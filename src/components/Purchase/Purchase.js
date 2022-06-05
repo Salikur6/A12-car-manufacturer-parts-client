@@ -9,7 +9,13 @@ import Spinner from '../Hooks/Spinner';
 const Purchase = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth);
-    const { data: item, isLoading } = useQuery('oneItem', () => fetch(`https://shielded-reef-19583.herokuapp.com/item/${id}`).then(res => res.json()))
+
+    const { data: item, isLoading } = useQuery('oneItem', () => fetch(`http://localhost:5000/item/${id}`, {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('access-token')}`
+        }
+    }).then(res => res.json()))
     // console.log(item)
 
     const [customError, setCustomError] = useState('');
@@ -43,7 +49,7 @@ const Purchase = () => {
 
         const order = { parts, partsImg, partsPrice, name, email, tel, country, city, address, quantity }
 
-        fetch('https://shielded-reef-19583.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

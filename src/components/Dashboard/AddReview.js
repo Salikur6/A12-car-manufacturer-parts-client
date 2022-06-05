@@ -17,7 +17,7 @@ const AddReview = () => {
         const img = user?.photoURL;
         const review = { rating, comment, name, img };
 
-        fetch('https://shielded-reef-19583.herokuapp.com/review', {
+        fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

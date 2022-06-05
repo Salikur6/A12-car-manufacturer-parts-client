@@ -20,10 +20,10 @@ const Reviews = () => {
     //         .then(data => setReviews(data))
     // }, [])
 
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://shielded-reef-19583.herokuapp.com/reviews', {
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/reviews', {
         method: 'GET',
         headers: {
-            'authorization': `Bearer ${localStorage.getItem('access-token')}`
+            authorization: `Bearer ${localStorage.getItem('access-token')}`
         }
     }).then(res => res.json()))
 
@@ -57,7 +57,7 @@ const Reviews = () => {
 
 
                     {
-                        reviews.map((review, index) => <SwiperSlide key={index}>
+                        reviews?.map((review, index) => <SwiperSlide key={index}>
                             <div className='lg:w-1/2 mx-auto my-10'>
                                 <div className="card glass card-side shadow-xl">
                                     <div className='shrink-0'>
