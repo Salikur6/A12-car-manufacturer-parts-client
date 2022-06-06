@@ -43,8 +43,8 @@ const AllUser = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -58,7 +58,7 @@ const AllUser = () => {
                         {
                             users.map((user, index) => <tr key={user?._id}>
                                 <th>{index + 1}</th>
-                                <td>{user?.name} {user?.role === 'admin' && <div class="badge badge-primary">Admin</div>
+                                <td>{user?.name} {user?.role === 'admin' && <div className="badge badge-primary">Admin</div>
                                 }</td>
                                 <td>{user?.email}</td>
                                 <td>
