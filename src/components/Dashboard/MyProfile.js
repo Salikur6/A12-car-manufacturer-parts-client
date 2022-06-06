@@ -27,7 +27,7 @@ const MyProfile = () => {
 
 
 
-    const { data: profileInfo, isLoading, refetch } = useQuery('profileinfo', () => fetch(`http://localhost:5000/profileinfo?email=${user?.email}`).then(res => res.json()));
+    const { data: profileInfo, isLoading, refetch } = useQuery('profileinfo', () => fetch(`https://shielded-reef-19583.herokuapp.com/profileinfo?email=${user?.email}`).then(res => res.json()));
 
     console.log(profileInfo);
 
@@ -83,7 +83,7 @@ const MyProfile = () => {
         if (location !== '' && phone !== '' && education !== '') {
             // console.log({ location, phone, education, linkedin })
 
-            fetch(`http://localhost:5000/profile/${user?.email}`, {
+            fetch(`https://shielded-reef-19583.herokuapp.com/profile/${user?.email}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

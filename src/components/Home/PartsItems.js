@@ -8,7 +8,7 @@ const PartsItems = () => {
 
 
 
-    const { data: parts, isLoading } = useQuery('items', () => fetch('http://localhost:5000/items', {
+    const { data: parts, isLoading } = useQuery('items', () => fetch('https://shielded-reef-19583.herokuapp.com/items', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`

@@ -10,7 +10,7 @@ const Purchase = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth);
 
-    const { data: item, isLoading } = useQuery('oneItem', () => fetch(`http://localhost:5000/item/${id}`, {
+    const { data: item, isLoading } = useQuery('oneItem', () => fetch(`https://shielded-reef-19583.herokuapp.com/item/${id}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('access-token')}`
@@ -49,7 +49,7 @@ const Purchase = () => {
 
         const order = { parts, partsImg, partsPrice, name, email, tel, country, city, address, quantity }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://shielded-reef-19583.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

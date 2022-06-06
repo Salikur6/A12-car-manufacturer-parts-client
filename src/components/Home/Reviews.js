@@ -20,7 +20,7 @@ const Reviews = () => {
     //         .then(data => setReviews(data))
     // }, [])
 
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/reviews', {
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://shielded-reef-19583.herokuapp.com/reviews', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('access-token')}`

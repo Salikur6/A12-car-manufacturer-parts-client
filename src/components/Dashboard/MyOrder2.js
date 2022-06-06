@@ -11,7 +11,7 @@ const MyOrder2 = () => {
     const Swal = require('sweetalert2')
     const navigate = useNavigate();
 
-    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`http://localhost:5000/userorder?email=${user?.email}`, {
+    const { data: userData, isLoading, refetch } = useQuery('userOrder', () => fetch(`https://shielded-reef-19583.herokuapp.com/userorder?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access-token')}`
@@ -46,7 +46,7 @@ const MyOrder2 = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`https://shielded-reef-19583.herokuapp.com/order/${id}`, {
                     method: "DELETE",
                 }).then(res => res.json())
                     .then(data => {
