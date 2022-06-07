@@ -26,10 +26,14 @@ const MyOrder2 = () => {
         return res.json()
     }));
 
+
+
+    console.log(userData)
+
+
     if (isLoading) {
         return <Spinner></Spinner>
     }
-
 
 
 
@@ -80,36 +84,62 @@ const MyOrder2 = () => {
                             <h4 className='mb-3 font-bold text-sm'>Shipping Address: {data?.address}</h4>
 
 
-                            {data?.transaction ? <button className='btn btn-success'>PROCESS SHIPMENT</button> : <div>
-                                <button className='btn btn-primary mr-2' ><Link to={`/payment/${data?._id}`}>PAY NOW</Link></button>
+                            {data?.shipped ? <button className='btn btn-primary'>RECEIVED</button>
+                                :
+                                <div>
+                                    {data?.transaction ? <button className='btn btn-success'>PROCESS SHIPMENT</button> : <div>
+                                        <button className='btn btn-info mr-2' ><Link to={`/payment/${data?._id}`}>PAY NOW</Link></button>
 
 
-                                <button className='btn btn-error' onClick={() => handleDelete(data?._id)}>CANCEL ORDER</button>
-                            </div>}
+                                        <button className='btn btn-error' onClick={() => handleDelete(data?._id)}>CANCEL ORDER</button>
+                                    </div>}
+                                </div>
 
-
-                        </div>
-
-
-                        <div className='text-center my-5'>
-                            {
-                                data?.transaction ?
-                                    <ul className="steps">
-                                        <li className="step step-warning">Register</li>
-                                        <li className="step step-warning">Place Order</li>
-                                        <li className="step step-warning">Payment</li>
-                                        <li className="step">Receive Product</li>
-                                    </ul>
-                                    :
-
-                                    <ul className="steps">
-                                        <li className="step step-warning">Register</li>
-                                        <li className="step step-warning">Place Order</li>
-                                        <li className="step ">Payment</li>
-                                        <li className="step">Receive Product</li>
-                                    </ul>
                             }
+
+
+
+
                         </div>
+
+
+
+                        {data?.shipped ?
+                            <div className='text-center my-5'>
+                                {data?.shipped && <ul className="steps">
+                                    <li className="step step-warning">Register</li>
+                                    <li className="step step-warning">Place Order</li>
+                                    <li className="step step-warning">Payment</li>
+                                    <li className="step step-warning">Receive Product</li>
+                                </ul>}
+                            </div>
+
+
+                            :
+
+                            <div className='text-center my-5'>
+                                {
+                                    data?.transaction ?
+                                        <ul className="steps">
+                                            <li className="step step-warning">Register</li>
+                                            <li className="step step-warning">Place Order</li>
+                                            <li className="step step-warning">Payment</li>
+                                            <li className="step">Receive Product</li>
+                                        </ul>
+                                        :
+                                        <ul className="steps">
+                                            <li className="step step-warning">Register</li>
+                                            <li className="step step-warning">Place Order</li>
+                                            <li className="step ">Payment</li>
+                                            <li className="step">Receive Product</li>
+                                        </ul>
+                                }
+                            </div>
+
+                        }
+
+
+
 
                     </div>
 

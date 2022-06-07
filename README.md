@@ -19,5 +19,6 @@ This website contain some Manufacturer Parts. This website is for user and admin
 * Only admin has permit to go more page like All User, manage all orders, add a product.
 * Admin can manage item, update item by increase and decrease quantity.
 * Admin can add item and delete items. 
-* You can register or login in this website for Admin.
-
+* Implemented login system for authorising the Clients and order how much you need.
+* dashboard page they clients can order and pay for specific products. If paid, the client will see paid and TxnId.
+* Advanced payment using stripe, using dotenv for secure source code, for secure websites implement JWT.
