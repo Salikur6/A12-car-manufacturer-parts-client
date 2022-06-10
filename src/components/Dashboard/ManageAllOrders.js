@@ -7,7 +7,7 @@ import Spinner from '../Hooks/Spinner';
 
 const ManageAllOrders = () => {
 
-    const { data: orderData, isLoading, refetch } = useQuery('manageOrder', () => fetch('http://localhost:5000/manageorders').then(res => res.json()))
+    const { data: orderData, isLoading, refetch } = useQuery('manageOrder', () => fetch('https://shielded-reef-19583.herokuapp.com/manageorders').then(res => res.json()))
 
 
 
@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     const handleShipped = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/manageorders/${id}`, {
+        fetch(`https://shielded-reef-19583.herokuapp.com/manageorders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const ManageAllOrders = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/deleteorder/${id}`, {
+                fetch(`https://shielded-reef-19583.herokuapp.com/deleteorder/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
